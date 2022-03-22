@@ -1,14 +1,21 @@
-# Captcha Bypassing Lab
+# ⭕ Captcha Bypassing Lab ⭕
+
+If you want to try Captcha Bypassing, you can do it with my [auto-captcha](https://github.com/D3Ext/PentestDictionary/blob/main/Captcha-Bypassing/auto-captcha.sh) script, it generates automatically 
+an http-server (apache2) with a simple but efective captcha. 
+You can bypass the captcha with just 2 requirements:
+
+- [python3](https://www.python.org/) **(for sending the requests and using tesseract)**
+- [tesseract](https://github.com/tesseract-ocr/tesseract) **(a python3 module for converting an image to text)**
 
 ## ⭕ Installation:
-You can set-up a totally functional captcha for practicing bypassing in your localhost, with just 
+Execute the script as root or with sudo for installing automatically the captcha:
 
-executing my script ***autocaptcha*** that downloads and configure the 2 different templates, one with a simple
-
-captcha input, and other with captcha and login at the same time:
-
-    wget "https://raw.githubusercontent.com/D3Ext/PentestDictionary/main/Captcha-Bypassing/auto-captcha.sh" &>/dev/null ; chmod +x autocaptcha.sh ; sudo ./autocaptcha.sh 
-
+    wget "https://github.com/D3Ext/PentestDictionary/blob/main/Captcha-Bypassing/auto-captcha.sh" ; chmod +x auto-captcha.sh ; ./auto-captcha.sh
+    
 ## ⭕ Demo:
 
-#### ⚪ Created by ***D3Ext***
+<img src="">
+
+You can learn more about captchas [here](https://www.anura.io/blog/captcha-and-recaptcha-how-fraudsters-bypass-it) and [here](https://book.hacktricks.xyz/pentesting-web/captcha-bypass)
+
+⚪ *Created by ***D3Ext****
