@@ -17,6 +17,8 @@ Execute the script as root or with sudo for installing automatically the captcha
 
 <img src="">
 
+### ⚪ Extra:
+
 You can learn more about captchas [here](https://www.anura.io/blog/captcha-and-recaptcha-how-fraudsters-bypass-it) and [here](https://book.hacktricks.xyz/pentesting-web/captcha-bypass)
 
 ⚪ *Created by ***D3Ext****
