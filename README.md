@@ -11,7 +11,7 @@ You can bypass the captcha with just 2 requirements:
 ## ⭕ Installation:
 Execute the script as root or with sudo for installing automatically the captcha:
 
-    wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh" &> /dev/null ; chmod +x auto-captcha.sh ; ./auto-captcha.sh
+    wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh" &> /dev/null ; chmod +x autocaptcha.sh ; ./autocaptcha.sh
     
 ## ⭕ Demo:
 
