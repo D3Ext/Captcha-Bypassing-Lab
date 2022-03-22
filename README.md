@@ -1,1 +1,1 @@
-# CaptchaBypassing-Lab
+# Captcha Bypassing Lab
