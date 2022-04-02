@@ -20,7 +20,7 @@ function ctrl_c(){
 	mv /var/www/html/backupfolder/* /var/www/html/ &>/dev/null
 	echo -e "${redColour}[ ${endColour}${yellowColour}!${endColour}${redColour} ] Removing captcha files...${endColour}\n"
 	rm -rf /var/www/html/backupfolder/ &>/dev/null
-	service apache2 stop &>/dev/null
+	systemctl stop httpd &>/dev/null
 	tput cnorm
 	exit 0
 }
@@ -28,10 +28,6 @@ function ctrl_c(){
 if [ $(id -u) == "0" ]; then
 	tput civis
 	echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Preparing the captcha for working properly...${endColour}"
-	apt install tesseract-ocr libtesseract-dev -y &>/dev/null
-	apt install php7.4-gd -y &>/dev/null
-	apt install apache2 -y &>/dev/null
-	pip install tesseract &>/dev/null
 	mkdir /var/www/html/backupfolder/ &>/dev/null
 	mv /var/www/html/* /var/www/html/backupfolder/ &>/dev/null
 	cd /var/www/ &>/dev/null
@@ -41,7 +37,8 @@ if [ $(id -u) == "0" ]; then
 	wget "https://raw.githubusercontent.com/D3Ext/PentestDictionary/main/Captcha-Bypassing/config/captcha.php" &>/dev/null
 	wget "https://raw.githubusercontent.com/D3Ext/PentestDictionary/main/Captcha-Bypassing/config/index.php" &>/dev/null
 	wget "https://raw.githubusercontent.com/D3Ext/PentestDictionary/main/Captcha-Bypassing/config/login.php" &>/dev/null
-	service apache2 start
+	systemctl enable httpd
+	systemctl start httpd
 	echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
 	sleep 1
 	echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Captcha mounted at http://127.0.0.1:80${endColour}"
