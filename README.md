@@ -1,11 +1,11 @@
 # ⭕ Captcha Bypassing Lab ⭕
 
-If you want to try Captcha Bypassing, you can practice it with my [auto-captcha](https://github.com/D3Ext/PentestDictionary/blob/main/Captcha-Bypassing/auto-captcha.sh) script, it generates automatically 
+If you want to practice Captcha Bypassing, you can do it with my [autocaptcha](https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh) script, it generates automatically 
 an http-server (apache2) with a simple but efective captcha. 
 
 ***\* Tested in Kali Linux, Parrot Os, Ubuntu and Arch \****
 
-You can bypass the captcha with just 2 requirements:
+You can bypass the captcha with just 2 things:
 
 - [python](https://www.python.org/) **(for sending the requests, using tesseract and image processing)**
 - [tesseract](https://github.com/tesseract-ocr/tesseract) **(a python module for converting an image to text)**
