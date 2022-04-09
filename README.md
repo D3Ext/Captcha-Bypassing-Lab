@@ -3,14 +3,14 @@
 If you want to try Captcha Bypassing, you can practice it with my [auto-captcha](https://github.com/D3Ext/PentestDictionary/blob/main/Captcha-Bypassing/auto-captcha.sh) script, it generates automatically 
 an http-server (apache2) with a simple but efective captcha. 
 
-***\* Test in Kali Linux, Parrot Os, Ubuntu and Arch \****
+***\* Tested in Kali Linux, Parrot Os, Ubuntu and Arch \****
 
 You can bypass the captcha with just 2 requirements:
 
-- [python3](https://www.python.org/) **(for sending the requests and using tesseract)**
-- [tesseract](https://github.com/tesseract-ocr/tesseract) **(a python3 module for converting an image to text)**
+- [python](https://www.python.org/) **(for sending the requests, using tesseract and image processing)**
+- [tesseract](https://github.com/tesseract-ocr/tesseract) **(a python module for converting an image to text)**
 
-## ⭕ Requirementts:
+## ⭕ Requirements:
 You just need to have installed php and apache2 with your package manager:
 
 If you are using Kali, Parrot or Ubuntu:
@@ -24,11 +24,15 @@ If you are using Arch:
 
 Execute the script as root or with sudo for installing automatically the captcha:
 
-    wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh"
+    wget https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh
     
 ## ⭕ Demo:
 
-<img src="">
+<img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/demo.png">
+
+<img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/captcha.png">
+
+-----------------------------------------------------------------------------------
 
 ### ⚪ Extra:
 
