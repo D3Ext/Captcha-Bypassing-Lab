@@ -11,10 +11,8 @@ function ctrl_c(){
 	echo -e "\n\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Exiting...${endColour}\n"
 	rm $web_path/captcha.php $web_path/index.php $web_path/login.php $web_path/monofont.ttf &>/dev/null
 	mv $web_path/backupfolder/* $web_path/ &>/dev/null
-	sleep 0.2
 	echo -e "${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Removing captcha files...${endColour}\n"
 	rm -rf $web_path/backupfolder &>/dev/null
-	tput cnorm
 	stop_server
 }
 
@@ -24,19 +22,16 @@ function stop_server(){
         	service apache2 stop
 		exit 0
 	fi
-
         if [ "$system"  == "Kali" ]; then
                 echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping apache2 service...${endColour}\n"
         	service apache2 stop
 		exit 0
 	fi
-
         if [ "$system"  == "Arch" ]; then
                 echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping php server...${endColour}\n"
 		sleep 0.2
         	exit 0
 	fi
-
         if [ "$system"  == "Ubuntu" ]; then
                 echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping apache service...${endColour}\n"
         	service apache2 stop
@@ -64,7 +59,6 @@ function start_server(){
 
 function check_os(){
 	system=$(cat /etc/os-release | grep '^NAME=' | awk '{print $1}' FS=' ' | awk '{print $2}' FS='"')
-
 	if [ "$system"  == "Parrot" ]; then
 		web_path="/var/www/html"
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You are using Parrot, the default path is $web_path...${endColour}"
@@ -89,7 +83,6 @@ function check_os(){
 if [ $(id -u) == "0" ]; then
 	check_os
 	if [ "$system" != "Arch" ]; then
-		tput civis
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Preparing the captcha for working properly...${endColour}"
 		mkdir $web_path &>/dev/null
 		mkdir $web_path/backupfolder/ &>/dev/null
@@ -101,7 +94,6 @@ if [ $(id -u) == "0" ]; then
 		wget "https://raw.githubusercontent.com/D3Ext/PentestDictionary/main/Captcha-Bypassing/config/login.php" &>/dev/null
 		start_server
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
-		sleep 1
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Captcha mounted at http://127.0.0.1:80${endColour}"
 		sleep 0.7
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You can also practice it with user and password in /login.php ${endColour}"
@@ -116,7 +108,6 @@ if [ $(id -u) == "0" ]; then
        			done
 		done
 	else
-		tput civis
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Preparing the captcha for working properly...${endColour}"
 		mkdir $web_path &>/dev/null
 		mkdir $web_path/backupfolder/ &>/dev/null
@@ -131,7 +122,6 @@ if [ $(id -u) == "0" ]; then
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You can also practice with user and password in /login.php ${endColour}"
 		sleep 0.2
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] The default credentials are admin:america ${endColour}"
-		sleep 0.2
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Captcha mounted at http://127.0.0.1:80${endColour}"
 		sleep 0.2
 		echo -e "\n${blueColour}[ ${endColour}${greenColour}+${endColour}${blueColour} ] Press Ctrl + C to stop the service${endColour}"
