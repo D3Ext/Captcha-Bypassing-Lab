@@ -36,13 +36,13 @@ Execute the script as root or with sudo for installing automatically the captcha
 
 -----------------------------------------------------------------------------------
 
-### ⚪ Extra:
+## ⚪ Extra:
 
 You can learn more about captchas [here](https://www.anura.io/blog/captcha-and-recaptcha-how-fraudsters-bypass-it) and [here](https://book.hacktricks.xyz/pentesting-web/captcha-bypass)
 
-**If you consider this project has been useful, I would really appreciate supporting me by giving this repo a star or buying me a coffee.**
+### **If you consider this project has been useful, I would really appreciate supporting me by giving this repo a star or buying me a coffee.**
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/d3ext)
+## [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/d3ext)
 
-Copyright © 2022, D3Ext
+### Copyright © 2022, D3Ext
 
