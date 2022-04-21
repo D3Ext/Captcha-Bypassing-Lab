@@ -25,6 +25,8 @@ If you are using Arch:
 Execute the script as root or with sudo for installing automatically the captcha:
 
     wget https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh
+    chmod +x autocaptcha.sh
+    ./autocaptcha.sh
     
 ## ⭕ Demo:
 
