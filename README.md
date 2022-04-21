@@ -3,7 +3,7 @@
 If you want to practice Captcha Bypassing, you can do it with my [autocaptcha](https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh) script, it generates automatically 
 an http-server (apache2) with a simple but efective captcha. 
 
-***\* Tested in Kali Linux, Parrot Os, Ubuntu and Arch \****
+***\* Tested in Kali Linux, Parrot OS, Ubuntu and Arch \****
 
 You can bypass the captcha with just 2 things:
 
@@ -40,4 +40,9 @@ Execute the script as root or with sudo for installing automatically the captcha
 
 You can learn more about captchas [here](https://www.anura.io/blog/captcha-and-recaptcha-how-fraudsters-bypass-it) and [here](https://book.hacktricks.xyz/pentesting-web/captcha-bypass)
 
-⚪ *Created by ***D3Ext****
+**If you consider this project has been useful, I would really appreciate supporting me by giving this repo a star or buying me a coffee.**
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/d3ext)
+
+Copyright © 2022, D3Ext
+
