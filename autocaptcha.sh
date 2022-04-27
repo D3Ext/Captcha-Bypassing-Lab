@@ -61,22 +61,18 @@ function check_os(){
 	system=$(cat /etc/os-release | grep '^NAME=' | awk '{print $1}' FS=' ' | awk '{print $2}' FS='"')
 	if [ "$system"  == "Parrot" ]; then
 		web_path="/var/www/html"
-		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You are using Parrot, the default path is $web_path...${endColour}"
 	fi
 
 	if [ "$system"  == "Kali" ]; then
 		web_path="/var/www/html"
-		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You are using Kali, the default path is $web_path...${endColour}"
 	fi
 
 	if [ "$system"  == "Arch" ]; then
 		web_path="/var/www/html"
-		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You are using Arch, the default path is $web_path...${endColour}"
 	fi
 
 	if [ "$system"  == "Ubuntu" ]; then
 		web_path="/var/www/html"
-		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You are using Ubuntu, the default path is $web_path...${endColour}"
 	fi
 }
 
@@ -88,10 +84,10 @@ if [ $(id -u) == "0" ]; then
 		mkdir $web_path/backupfolder/ &>/dev/null
 		mv $web_path/* $web_path/backupfolder/ &>/dev/null
 		cd $web_path/ &>/dev/null
-		curl -s -X GET "https://www.allphptricks.com/demo/2018/may/create-simple-captcha-script/monofont.ttf" -o monofont.ttf &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/PentestDictionary/main/Captcha-Bypassing/config/captcha.php" &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/PentestDictionary/main/Captcha-Bypassing/config/index.php" &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/PentestDictionary/main/Captcha-Bypassing/config/login.php" &>/dev/null
+		curl -s -X GET "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/monofont.ttf" -o monofont.ttf &>/dev/null
+		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/captcha.php" &>/dev/null
+		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/index.php" &>/dev/null
+		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/login.php" &>/dev/null
 		start_server
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Captcha mounted at http://127.0.0.1:80${endColour}"
