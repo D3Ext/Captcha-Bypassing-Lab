@@ -84,7 +84,7 @@ if [ $(id -u) == "0" ]; then
 		mkdir $web_path/backupfolder/ &>/dev/null
 		mv $web_path/* $web_path/backupfolder/ &>/dev/null
 		cd $web_path/ &>/dev/null
-		curl -s -X GET "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/monofont.ttf" -o monofont.ttf &>/dev/null
+		curl -s -X GET "https://github.com/D3Ext/Captcha-Bypassing-Lab/raw/main/template/monofont.ttf" -o monofont.ttf &>/dev/null
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/captcha.php" &>/dev/null
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/index.php" &>/dev/null
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/login.php" &>/dev/null
@@ -109,7 +109,7 @@ if [ $(id -u) == "0" ]; then
 		mkdir $web_path/backupfolder/ &>/dev/null
 		mv $web_path/* $web_path/backupfolder/ &>/dev/null
 		cd $web_path/ &>/dev/null
-		curl -s -X GET "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/monofont.ttf" -o monofont.ttf &>/dev/null
+		curl -s -X GET "https://github.com/D3Ext/Captcha-Bypassing-Lab/raw/main/template/monofont.ttf" -o monofont.ttf &>/dev/null
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/captcha.php" &>/dev/null
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/index.php" &>/dev/null
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/login.php" &>/dev/null
