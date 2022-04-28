@@ -87,11 +87,14 @@ if [ $(id -u) == "0" ]; then
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/captcha.php" &>/dev/null
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/index.php" &>/dev/null
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/login.php" &>/dev/null
+		echo -e "${blueColour}[${endColour}${yellowColour} *${endColour}${blueColour} ] Download https://github.com/D3Ext/Captcha-Bypassing-Lab/tree/main/template/monofont.ttf and move it to /var/www/html/"
 		start_server
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
+		sleep 0.2
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Captcha mounted at http://127.0.0.1:80${endColour}"
-		sleep 0.7
+		sleep 0.2
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You can also practice it with user and password in /login.php ${endColour}"
+		sleep 0.2
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] The default credentials are admin:america ${endColour}"
 		sleep 0.2
 		spinner=('|' '/' '-' '\')
@@ -113,7 +116,7 @@ if [ $(id -u) == "0" ]; then
 		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/login.php" &>/dev/null
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
 		sleep 0.2
-		echo -e "Download https://github.com/D3Ext/Captcha-Bypassing-Lab/tree/main/template and move it to /var/www/html/"
+		echo -e "${blueColour}[${endColour}${yellowColour} *${endColour}${blueColour} ] Download https://github.com/D3Ext/Captcha-Bypassing-Lab/tree/main/template/monofont.ttf and move it to /var/www/html/"
 		sleep 0.2
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You can also practice with user and password in /login.php ${endColour}"
 		sleep 0.2
