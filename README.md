@@ -1,4 +1,4 @@
-# ⭕ Captcha Bypassing Lab ⭕
+# Captcha Bypassing Lab
 
 If you want to practice Captcha Bypassing, you can do it with my [autocaptcha](https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh) script, it generates automatically 
 an http-server (apache2) with a simple but efective captcha. 
