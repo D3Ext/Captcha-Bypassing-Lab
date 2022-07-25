@@ -1,6 +1,6 @@
 # Captcha Bypassing Lab
 
-If you want to practice Captcha Bypassing, you can do it with my [autocaptcha](https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh) script, it generates automatically 
+*~ If you want to practice Captcha Bypassing, this is the right place! ~*
 an http-server (apache2) with a simple but efective captcha. 
 
 ***\* Tested in Kali Linux, Parrot OS, Ubuntu and Arch \****
@@ -15,10 +15,15 @@ You just need to have installed php and apache2 with your package manager:
 
 If you are using Kali, Parrot or Ubuntu:
 
-    apt install php apache2 -y
+```sh
+apt install php apache2 -y
+```
+
 If you are using Arch:
 
-    pacman -S php apache
+```sh
+pacman -S php apache
+```
 
 ## Installation:
 
