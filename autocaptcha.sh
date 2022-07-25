@@ -17,25 +17,16 @@ function ctrl_c(){
 }
 
 function stop_server(){
-        if [ "$system"  == "Parrot" ]; then
+        if [ "$system"  == "Parrot" ] || [ "$system"  == "Kali" ] || [ "$system"  == "Ubuntu" ]; then
                 echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping apache2 service...${endColour}\n"
         	service apache2 stop
 		exit 0
 	fi
-        if [ "$system"  == "Kali" ]; then
-                echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping apache2 service...${endColour}\n"
-        	service apache2 stop
-		exit 0
-	fi
+
         if [ "$system"  == "Arch" ]; then
                 echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping php server...${endColour}\n"
 		sleep 0.2
         	exit 0
-	fi
-        if [ "$system"  == "Ubuntu" ]; then
-                echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping apache service...${endColour}\n"
-        	service apache2 stop
-		exit 0
 	fi
 }
 
@@ -59,19 +50,11 @@ function start_server(){
 
 function check_os(){
 	system=$(cat /etc/os-release | grep '^NAME=' | awk '{print $1}' FS=' ' | awk '{print $2}' FS='"')
-	if [ "$system"  == "Parrot" ]; then
-		web_path="/var/www/html"
-	fi
-
-	if [ "$system"  == "Kali" ]; then
+	if [ "$system"  == "Parrot" ] || [ "$system"  == "Kali" ] || [ "$system"  == "Ubuntu" ]; then
 		web_path="/var/www/html"
 	fi
 
 	if [ "$system"  == "Arch" ]; then
-		web_path="/var/www/html"
-	fi
-
-	if [ "$system"  == "Ubuntu" ]; then
 		web_path="/var/www/html"
 	fi
 }
@@ -83,11 +66,7 @@ if [ $(id -u) == "0" ]; then
 		mkdir $web_path &>/dev/null
 		mkdir $web_path/backupfolder/ &>/dev/null
 		mv $web_path/* $web_path/backupfolder/ &>/dev/null
-		cd $web_path/ &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/captcha.php" &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/index.php" &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/login.php" &>/dev/null
-		echo -e "\n${blueColour}[${endColour}${yellowColour} *${endColour}${blueColour} ] Download https://github.com/D3Ext/Captcha-Bypassing-Lab/blob/main/template/monofont.ttf?raw=true and move it to /var/www/html/"
+		mv template/* $web_path/ &>/dev/null
 		start_server
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
 		sleep 0.2
@@ -110,13 +89,9 @@ if [ $(id -u) == "0" ]; then
 		mkdir $web_path &>/dev/null
 		mkdir $web_path/backupfolder/ &>/dev/null
 		mv $web_path/* $web_path/backupfolder/ &>/dev/null
-		cd $web_path/ &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/captcha.php" &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/index.php" &>/dev/null
-		wget "https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/template/login.php" &>/dev/null
+		mv template/* ${web_path}/ &>/dev/null
+
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
-		sleep 0.2
-		echo -e "\n${blueColour}[${endColour}${yellowColour} *${endColour}${blueColour} ] Download https://github.com/D3Ext/Captcha-Bypassing-Lab/blob/main/template/monofont.ttf?raw=true and move it to /var/www/html/"
 		sleep 0.2
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] You can also practice with user and password in /login.php ${endColour}"
 		sleep 0.2
