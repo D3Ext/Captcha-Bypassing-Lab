@@ -31,32 +31,18 @@ function stop_server(){
 }
 
 function start_server(){
-        if [ "$system"  == "Parrot" ]; then
-                service apache2 start
-        fi
-
-        if [ "$system"  == "Kali" ]; then
+        if [ "$system"  == "Parrot" ] || [ "$system"  == "Kali" ] || [ "$system"  == "Ubuntu" ]; then
                 service apache2 start
         fi
 
         if [ "$system"  == "Arch" ]; then
                 php -S 0.0.0.0:80 &>/dev/null
         fi
-
-        if [ "$system"  == "Ubuntu" ]; then
-		service apache2 start
-        fi
 }
 
 function check_os(){
 	system=$(cat /etc/os-release | grep '^NAME=' | awk '{print $1}' FS=' ' | awk '{print $2}' FS='"')
-	if [ "$system"  == "Parrot" ] || [ "$system"  == "Kali" ] || [ "$system"  == "Ubuntu" ]; then
-		web_path="/var/www/html"
-	fi
-
-	if [ "$system"  == "Arch" ]; then
-		web_path="/var/www/html"
-	fi
+	web_path="/var/www/html"
 }
 
 if [ $(id -u) == "0" ]; then
