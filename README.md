@@ -10,7 +10,7 @@ You can bypass the captcha with just 2 things:
 - [python](https://www.python.org/) **(for sending the requests, using tesseract and image processing)**
 - [tesseract](https://github.com/tesseract-ocr/tesseract) **(a python module for converting an image to text)**
 
-## ⭕ Requirements:
+## Requirements:
 You just need to have installed php and apache2 with your package manager:
 
 If you are using Kali, Parrot or Ubuntu:
@@ -20,16 +20,16 @@ If you are using Arch:
 
     pacman -S php apache
 
-## ⭕ Installation:
+## Installation:
 
 Execute the script as root or with sudo for installing automatically the captcha:
 
-    wget https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/autocaptcha.sh
-    bash autocaptcha.sh
+```sh
+git clone https://github.com/D3Ext/Captcha-Bypassing
+bash autocaptcha.sh
+```
 
-And download the given file in your browser for making it works. 
-
-## ⭕ Demo:
+## Demo:
 
 <img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/demo.png">
 
