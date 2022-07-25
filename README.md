@@ -1,7 +1,6 @@
 # Captcha Bypassing Lab
 
-*~ If you want to practice Captcha Bypassing, this is the right place! ~*
-an http-server (apache2) with a simple but efective captcha. 
+*If you want to practice Captcha Bypassing, this is the right place!*
 
 ***\* Tested in Kali Linux, Parrot OS, Ubuntu and Arch \****
 
