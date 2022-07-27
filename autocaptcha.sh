@@ -1,12 +1,21 @@
 #!/bin/bash
 
+# --------------------------------
+# Author: D3Ext
+# GitHub: https://github.com/D3Ext
+# Twitter: @d3ext
+# Mail: <d3ext@proton.me>
+# Website: https://d3ext.github.io
+# --------------------------------
+
+# Output Colors
 greenColour="\e[0;32m\033[1m"
 endColour="\033[0m\e[0m"
 blueColour="\e[0;34m\033[1m"
 yellowColour="\e[0;33m\033[1m"
 
+# Ctrl + C Exit Function
 trap ctrl_c INT
-
 function ctrl_c(){
 	echo -e "\n\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Exiting...${endColour}\n"
 	rm $web_path/captcha.php $web_path/index.php $web_path/login.php $web_path/monofont.ttf &>/dev/null
@@ -16,20 +25,22 @@ function ctrl_c(){
 	stop_server
 }
 
+# Function to stop the apache2 service
 function stop_server(){
         if [ "$system"  == "Parrot" ] || [ "$system"  == "Kali" ] || [ "$system"  == "Ubuntu" ]; then
-                echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping apache2 service...${endColour}\n"
+                echo -e "${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping apache2 service...${endColour}\n"
         	service apache2 stop
 		exit 0
 	fi
 
         if [ "$system"  == "Arch" ]; then
-                echo -e "\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping php server...${endColour}\n"
+                echo -e "${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Stoping php server...${endColour}\n"
 		sleep 0.2
         	exit 0
 	fi
 }
 
+# Function to start the apache2 service
 function start_server(){
         if [ "$system"  == "Parrot" ] || [ "$system"  == "Kali" ] || [ "$system"  == "Ubuntu" ]; then
                 service apache2 start
@@ -40,19 +51,28 @@ function start_server(){
         fi
 }
 
+# Check if OS is arch based
 function check_os(){
 	system=$(cat /etc/os-release | grep '^NAME=' | awk '{print $1}' FS=' ' | awk '{print $2}' FS='"')
 	web_path="/var/www/html"
 }
 
+# Main Function
 if [ $(id -u) == "0" ]; then
 	check_os
+	lsof -i:80 &>/dev/null
+
+	if [ "$(echo $?)" == "0" ]; then
+		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Port 80 is already occupied\n${endColour}"
+		exit 0
+	fi
+
 	if [ "$system" != "Arch" ]; then
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Preparing the captcha for working properly...${endColour}"
 		mkdir $web_path &>/dev/null
 		mkdir $web_path/backupfolder/ &>/dev/null
 		mv $web_path/* $web_path/backupfolder/ &>/dev/null
-		mv template/* $web_path/ &>/dev/null
+		cp template/* $web_path/ &>/dev/null
 		start_server
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
 		sleep 0.2
@@ -64,6 +84,7 @@ if [ $(id -u) == "0" ]; then
 		sleep 0.2
 		spinner=('|' '/' '-' '\')
 		echo -e "\n"
+
 		while true; do
        			for i in "${spinner[@]}"; do
                			echo -ne "${blueColour}\r[${endColour}""${yellowColour} $i ${endColour}""${blueColour}] Press Ctrl + C to stop the service${endColour}"
@@ -75,7 +96,7 @@ if [ $(id -u) == "0" ]; then
 		mkdir $web_path &>/dev/null
 		mkdir $web_path/backupfolder/ &>/dev/null
 		mv $web_path/* $web_path/backupfolder/ &>/dev/null
-		mv template/* ${web_path}/ &>/dev/null
+		cp template/* ${web_path}/ &>/dev/null
 
 		echo -e "\n${blueColour}[ ${endColour}${yellowColour}*${endColour}${blueColour} ] Starting service for testing captcha bypassing...${endColour}"
 		sleep 0.2
@@ -89,5 +110,5 @@ if [ $(id -u) == "0" ]; then
 	fi
 else
 	echo -e "\n\n${blueColour}[ ${endColour}${yellowColour}!${endColour}${blueColour} ] Execute the script as root${endColour}\n"
-	exit 1
+	exit 0
 fi
