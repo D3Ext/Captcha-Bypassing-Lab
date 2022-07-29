@@ -36,7 +36,7 @@ bash autocaptcha.sh
 ## Demo:
 
 <img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/demo.png">
-
+*\* The captcha characters are in an image, not displayed in text \**
 <img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/captcha.png">
 
 -----------------------------------------------------------------------------------
