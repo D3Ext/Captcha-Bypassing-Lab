@@ -1,30 +1,18 @@
 # Captcha Bypassing Lab
 
-*If you want to practice Captcha Bypassing, this is the right place!*
+If you want to practise captcha bypassing, this is the right place!
 
-***\* Tested in Kali Linux, Parrot OS, Ubuntu and Arch \****
+## Introduction
 
-You can bypass the captcha with just 2 things:
+This repo contains a lab to practise captcha bypassing and a python script which is already able to "break" the captcha and get the numbers of it. The lab has 2 parts, one to simply parse the captcha and the other one to combine the captcha with a simple login form
 
-- [python](https://www.python.org/) **(for sending the requests, using tesseract and image processing)**
-- [tesseract](https://github.com/tesseract-ocr/tesseract) **(a python module for converting an image to text)**
+## Requirements
 
-## Requirements:
-You just need to have installed php and apache2 with your package manager:
+To use the python script you need to have install the python ***pytesseract*** package as well as the ***tesseract*** command. Both of them used to convert images to text:
 
-If you are using Kali, Parrot or Ubuntu:
+To launch the lab you just need a php server like apache and in order to generate the captcha you need to have installed php-gd and to have it enabled on `/etc/php/php.ini` by uncommenting the line `extension=gd`
 
-```sh
-apt install php apache2 -y
-```
-
-If you are using Arch:
-
-```sh
-pacman -S php apache
-```
-
-## Installation:
+## Installation
 
 Execute the script as root or with sudo for installing automatically the captcha:
 
@@ -33,23 +21,30 @@ git clone https://github.com/D3Ext/Captcha-Bypassing
 bash autocaptcha.sh
 ```
 
-## Demo:
+## Solution
 
-<img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/demo.png">
+In order to solve both labs the project has, there actually are infinite solutions but feel free to check the python scripts on the `scripts/` folder, `solution1.py` for the first part and `solution2.py` for the second one
 
-*\* The captcha characters are in an image, not displayed in text \**
-<img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/captcha.png">
+## Demo
 
+<img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/demo1.png">
 
------------------------------------------------------------------------------------
+<img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/demo2.png">
 
-## ⚪ Extra:
+<img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/demo3.png">
 
-You can learn more about captchas [here](https://www.anura.io/blog/captcha-and-recaptcha-how-fraudsters-bypass-it) and [here](https://book.hacktricks.xyz/pentesting-web/captcha-bypass)
+<img src="https://raw.githubusercontent.com/D3Ext/Captcha-Bypassing-Lab/main/images/demo4.png">
 
-#### **If you consider this project has been useful, I would really appreciate supporting me by giving this repo a star or buying me a coffee.**
+## References
 
-## [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/d3ext)
+```
+https://www.anura.io/blog/captcha-and-recaptcha-how-fraudsters-bypass-it
+https://book.hacktricks.xyz/pentesting-web/captcha-bypass
+```
 
-### Copyright © 2022, D3Ext
+## License
+
+This project is under MIT license
+
+Copyright © 2024, *D3Ext*
 
