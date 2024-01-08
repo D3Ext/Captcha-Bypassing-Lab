@@ -10,15 +10,16 @@ This repo contains a lab to practise captcha bypassing and a python script which
 
 To use the python script you need to have install the python ***pytesseract*** package as well as the ***tesseract*** command. Both of them used to convert images to text:
 
-To launch the lab you just need a php server like apache and in order to generate the captcha you need to have installed php-gd and to have it enabled on `/etc/php/php.ini` by uncommenting the line `extension=gd`
+To launch the lab you just need a php server and in order to generate the captcha you need to have installed php-gd and to have it enabled on `/etc/php/php.ini` by uncommenting the line `extension=gd`
 
 ## Installation
 
-Execute the script as root or with sudo for installing automatically the captcha:
+Clone the repo and set up a php server on the lab folder
 
 ```sh
-git clone https://github.com/D3Ext/Captcha-Bypassing
-bash autocaptcha.sh
+git clone https://github.com/D3Ext/Captcha-Bypassing-Lab
+cd Captcha-Bypassing-Lab/template
+php -S 0.0.0.0:80
 ```
 
 ## Solution
